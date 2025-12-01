@@ -1,0 +1,26 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white mt-auto">
+    <div class="content-container py-12 text-sm">
+        <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-8 mb-8">
+            <div class="flex space-x-6 mb-6 md:mb-0">
+                <a href="#" class="text-gray-400 hover:text-indigo-400 transition transform hover:scale-110">X/Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-indigo-400 transition transform hover:scale-110">YouTube</a>
+                <a href="#" class="text-gray-400 hover:text-indigo-400 transition transform hover:scale-110">LinkedIn</a>
+            </div>
+            <div class="text-2xl font-black">
+                <span class="text-indigo-500">IA</span><span class="text-white">Creativa</span>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-between text-gray-400 items-center">
+            <p>&copy; {currentYear} IA Creativa. Todos los derechos reservados.</p>
+            <div class="space-x-6 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-indigo-400 transition">Aviso Legal</a>
+                <a href="#" class="hover:text-indigo-400 transition">Privacidad</a>
+                <a href="#" class="hover:text-indigo-400 transition">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>

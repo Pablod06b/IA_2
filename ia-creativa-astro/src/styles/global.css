@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-gray-50 text-gray-800;
+}
+
+.accent-color {
+    @apply text-indigo-600;
+}
+
+.accent-bg {
+    @apply bg-indigo-600;
+}
+
+.accent-bg-hover:hover {
+    @apply bg-indigo-700;
+}
+
+.content-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Typography for Markdown Content */
+.prose h2 {
+    @apply text-2xl font-bold mt-8 mb-4 text-gray-900 border-l-4 border-indigo-600 pl-4;
+}
+
+.prose h3 {
+    @apply text-xl font-bold mt-6 mb-2 text-gray-800;
+}
+
+.prose p {
+    @apply mb-4 leading-relaxed text-gray-700;
+}
+
+.prose ul {
+    @apply list-disc list-inside mb-4 space-y-1;
+}
+
+.prose blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
+}
+
+.prose img {
+    @apply rounded-xl shadow-lg my-6 w-full;
+}
+
+.prose a {
+    @apply text-indigo-600 hover:underline;
+}

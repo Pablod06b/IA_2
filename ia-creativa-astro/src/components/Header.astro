@@ -1,0 +1,49 @@
+---
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="content-container py-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-black flex items-center group">
+            <span class="text-indigo-600 group-hover:text-indigo-700 transition">IA</span>
+            <span class="text-gray-800">Creativa</span>
+            <span class="text-xs ml-2 text-gray-500 font-normal hidden sm:inline border-l border-gray-300 pl-2">
+                Transforma tu creatividad con IA
+            </span>
+        </a>
+
+        <!-- Botón de Menú Hamburguesa (Móvil) -->
+        <button id="menu-button" class="sm:hidden p-2 text-gray-600 hover:text-indigo-600 focus:outline-none" aria-label="Menu">
+            <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+            <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <!-- Menú de Navegación -->
+        <nav id="main-nav" class="hidden sm:flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 absolute sm:static top-16 left-0 right-0 bg-white sm:bg-transparent p-6 sm:p-0 shadow-lg sm:shadow-none border-t sm:border-none z-40">
+            <a href="/" class="text-gray-600 hover:text-indigo-600 font-medium transition block">Home</a>
+            <a href="/blog" class="text-gray-600 hover:text-indigo-600 font-medium transition block">Blog</a>
+            <a href="/about" class="text-gray-600 hover:text-indigo-600 font-medium transition block">Sobre Mí</a>
+            <a href="/contact" class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-full font-semibold text-sm hover:bg-indigo-100 transition inline-block text-center">
+                Newsletter
+            </a>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    const mainNav = document.getElementById('main-nav');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    if (menuButton && mainNav && iconMenu && iconClose) {
+        menuButton.addEventListener('click', () => {
+            mainNav.classList.toggle('hidden');
+            iconMenu.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+    }
+</script>

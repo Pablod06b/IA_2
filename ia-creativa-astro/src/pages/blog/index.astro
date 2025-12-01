@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => {
+    return new Date(b.data.pubDate || 0).valueOf() - new Date(a.data.pubDate || 0).valueOf();
+});
+---
+
+<Layout title="Blog & Recursos - IA Creativa">
+	<section class="content-container text-center mb-12">
+		<h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-gray-900">Blog & Recursos</h1>
+		<p class="text-xl text-gray-600 max-w-2xl mx-auto">Explora todos nuestros artículos, guías y tutoriales sobre Inteligencia Artificial.</p>
+	</section>
+
+	<!-- Buscador (Client-Side) -->
+	<div class="content-container max-w-xl mx-auto mb-12 relative">
+		<input type="text" id="blog-search" placeholder="Buscar artículos..." class="w-full pl-12 pr-4 py-3 rounded-full border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none shadow-sm">
+		<svg class="w-6 h-6 text-gray-400 absolute left-4 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+		</svg>
+	</div>
+
+	<section class="content-container">
+		<div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+			{sortedPosts.map(post => (
+				<div class="article-item" data-title={post.data.title.toLowerCase()} data-desc={post.data.description.toLowerCase()}>
+					<ArticleCard 
+						title={post.data.title} 
+						summary={post.data.description} 
+						slug={post.slug} 
+						image={post.data.heroImage}
+						isGuide={post.data.isGuide}
+					/>
+				</div>
+			))}
+		</div>
+		<p id="no-results" class="hidden text-center text-gray-500 text-lg">No se encontraron artículos que coincidan con tu búsqueda.</p>
+	</section>
+</Layout>
+
+<script>
+	const searchInput = document.getElementById('blog-search') as HTMLInputElement;
+	const articles = document.querySelectorAll('.article-item');
+	const noResults = document.getElementById('no-results');
+
+	if (searchInput) {
+		searchInput.addEventListener('input', (e) => {
+			const term = (e.target as HTMLInputElement).value.toLowerCase();
+			let hasResults = false;
+
+			articles.forEach(article => {
+				const title = article.getAttribute('data-title') || '';
+				const desc = article.getAttribute('data-desc') || '';
+
+				if (title.includes(term) || desc.includes(term)) {
+					(article as HTMLElement).style.display = 'block';
+					hasResults = true;
+				} else {
+					(article as HTMLElement).style.display = 'none';
+				}
+			});
+
+			if (noResults) {
+				noResults.classList.toggle('hidden', hasResults);
+			}
+		});
+	}
+</script>
