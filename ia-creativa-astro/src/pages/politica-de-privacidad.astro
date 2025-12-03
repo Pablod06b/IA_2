@@ -1,0 +1,40 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Política de Privacidad - IA Creativa">
+    <main class="content-container py-12">
+        <h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Política de Privacidad</h1>
+        
+        <div class="prose dark:prose-invert max-w-none">
+            <p>Última actualización: {new Date().toLocaleDateString()}</p>
+
+            <h2>1. Responsable del Tratamiento</h2>
+            <p>IA Creativa es el responsable del tratamiento de los datos personales del usuario y le informa que estos datos serán tratados de conformidad con lo dispuesto en el Reglamento (UE) 2016/679 de 27 de abril de 2016 (GDPR) relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos.</p>
+
+            <h2>2. Finalidad del Tratamiento</h2>
+            <p>Mantener una relación comercial con el Usuario. Las operaciones previstas para realizar el tratamiento son:</p>
+            <ul>
+                <li>Remisión de comunicaciones comerciales publicitarias por email, fax, SMS, MMS, comunidades sociales o cualquier otro medio electrónico o físico, presente o futuro, que posibilite realizar comunicaciones comerciales.</li>
+                <li>Realizar estudios estadísticos.</li>
+                <li>Tramitar encargos, solicitudes o cualquier tipo de petición que sea realizada por el usuario a través de cualquiera de las formas de contacto que se ponen a su disposición.</li>
+                <li>Remitir el boletín de noticias de la página web.</li>
+            </ul>
+
+            <h2>3. Conservación de los Datos</h2>
+            <p>Se conservarán mientras exista un interés mutuo para mantener el fin del tratamiento y cuando ya no sea necesario para tal fin, se suprimirán con medidas de seguridad adecuadas para garantizar la seudonimización de los datos o la destrucción total de los mismos.</p>
+
+            <h2>4. Comunicación de los Datos</h2>
+            <p>No se comunicarán los datos a terceros, salvo obligación legal.</p>
+
+            <h2>5. Derechos del Usuario</h2>
+            <ul>
+                <li>Derecho a retirar el consentimiento en cualquier momento.</li>
+                <li>Derecho de acceso, rectificación, portabilidad y supresión de sus datos y a la limitación u oposición a su tratamiento.</li>
+                <li>Derecho a presentar una reclamación ante la autoridad de control (agpd.es) si considera que el tratamiento no se ajusta a la normativa vigente.</li>
+            </ul>
+        </div>
+    </main>
+</Layout>
