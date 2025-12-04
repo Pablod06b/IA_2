@@ -24,23 +24,23 @@ body {
 
 /* Typography for Markdown Content */
 .prose h2 {
-    @apply text-2xl font-bold mt-8 mb-4 text-gray-900 border-l-4 border-indigo-600 pl-4;
+    @apply text-3xl font-bold mt-12 mb-6 text-gray-800 tracking-tight;
 }
 
 .prose h3 {
-    @apply text-xl font-bold mt-6 mb-2 text-gray-800;
+    @apply text-2xl font-bold mt-10 mb-4 text-gray-800;
 }
 
 .prose p {
-    @apply mb-4 leading-relaxed text-gray-700;
+    @apply mb-6 leading-loose text-lg text-gray-700;
 }
 
 .prose ul {
-    @apply list-disc list-inside mb-4 space-y-1;
+    @apply list-disc list-outside ml-6 mb-6 space-y-2 text-lg text-gray-700;
 }
 
 .prose blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
+    @apply border-l-4 border-indigo-200 pl-6 italic text-xl text-gray-600 my-8 py-2;
 }
 
 .prose img {
